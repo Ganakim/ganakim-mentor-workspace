@@ -1,3 +1,6 @@
 class Portfolio < ApplicationRecord
-  validates_presence_of :title, :body, :thimb_image, :main_image
+  validates_presence_of :title, :body, :thumb_image, :main_image
+  
+  scope :js, -> {where(subtitle: 'JavaScript')}
+  scope :ruby, -> {where(subtitle: 'Ruby')}
 end

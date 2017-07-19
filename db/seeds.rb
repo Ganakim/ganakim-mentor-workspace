@@ -1,7 +1,14 @@
 3.times do|x|
+  Topic.create!(
+    title: "Topic# #{x}"
+    )
+end
+
+3.times do|x|
   Blog.create!(
     title: "Post# #{x}",
-    body: "This post is a placeholder."
+    body: "This post is a placeholder.",
+    topic_id: Topic.last.id
     )
 end
 
@@ -15,11 +22,19 @@ end
 3.times do|x|
   Portfolio.create!(
     title: "I am proficient at:",
-    subtitle: " #{x}",
+    subtitle: "Ruby",
     body: "Placeholders galore",
     main_image: "http://via.placeholder.com/700x400",
     thumb_image: "http://via.placeholder.com/350x200"
     )
 end
+
+Portfolio.create!(
+  title: "I am proficient at:",
+  subtitle: "JavaScript",
+  body: "Placeholders galore",
+  main_image: "http://via.placeholder.com/700x400",
+  thumb_image: "http://via.placeholder.com/350x200"
+  )
 
 puts "Complete."
