@@ -36,5 +36,11 @@ Portfolio.create!(
   main_image: "http://via.placeholder.com/700x400",
   thumb_image: "http://via.placeholder.com/350x200"
   )
+  
+  3.times do|x|
+  portfolio.last.technologies.create!(
+    name: "Technology #{x}"
+    )
+end
 
 puts "Complete."
