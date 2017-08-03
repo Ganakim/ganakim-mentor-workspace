@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720153431) do
+ActiveRecord::Schema.define(version: 20170802142318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20170720153431) do
     t.integer  "topic_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true, using: :btree
     t.index ["topic_id"], name: "index_blogs_on_topic_id", using: :btree
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -47,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170720153431) do
     t.text     "thumb_image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "position"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -85,10 +96,13 @@ ActiveRecord::Schema.define(version: 20170720153431) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "roles"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
   add_foreign_key "technologies", "portfolios"
 end

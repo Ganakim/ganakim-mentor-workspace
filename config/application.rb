@@ -18,6 +18,7 @@ Bundler.require(*Rails.groups)
 
 module DevcampPortfolio
   class Application < Rails::Application
+   config.eager_load_paths << "#{Rails.root}/lib"
     config.generators do |g|
       g.orm             :active_record
       g.template_engine :erb
