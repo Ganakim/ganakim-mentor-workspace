@@ -193,3 +193,40 @@ h6, .h6 {
   font-weight: 700;
   color: #777;
 }
+
+.blogcrumb a {
+  font-size: 1.25em;
+  margin: 0 10px;
+}
+
+.blog-head {
+  border-bottom: 2px solid #0275d8;
+}
+
+.nav-cust-btn {
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .nav-link.active {
+    padding-left: 10px;
+    background-color: rgba(1, 46, 85, .3);
+  }
+  
+  .nav-link.active::after {
+    left: 1.5em;
+    bottom: 5px;
+  }
+}
+
+.gritter-close {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-body{
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: 3px solid #0275d8;
+}

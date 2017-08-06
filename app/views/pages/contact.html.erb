@@ -1,3 +1,14 @@
-<h1>Pages#contact</h1>
-<p>Phone number: <%= number_to_phone('8019602016') %></p>
-<p><a href='mailto:espene.cornwall@gmail.com?subject=PortfolioContact' 'email me'></a>Email me</p>
+<div class='app-card-container'>
+  <div class='card'>
+    <h1>Contact me:</h1>
+    <p>Phone number: <%= number_to_phone('8019602016') %></p>
+    <p><a href='mailto:espene.cornwall@gmail.com?subject=PortfolioContact' 'email me'>Email me</a></p>
+    <hr>
+    <h4>Or, find me on social media:</h4>
+    <div class='row out-find'>
+      <a href="https://github.com/Ganakim"><%= fa_icon "github" %></a>
+      <a href="https://www.facebook.com/spencer.cornwall"><%= fa_icon "facebook" %></a>
+      <a href="https://www.linkedin.com/in/spencer-cornwall-306647123"><%= fa_icon "linkedin-square" %></a>
+    </div>
+  </div>
+</div>

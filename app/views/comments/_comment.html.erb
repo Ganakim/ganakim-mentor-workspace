@@ -7,7 +7,7 @@
         </div>
         <div class='col-md-10'>
           <div>
-            <%= comment.content %>
+            <%= markdown comment.content %>
           </div>
           <div class='commented-by'>
             Commented posted by <span class='comment-name'><%= comment.user.name %></span> <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago.

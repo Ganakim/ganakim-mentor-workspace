@@ -1,7 +1,9 @@
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
+      <% if !current_page?(portfolios_path) %>
       <%= link_to 'View All', portfolios_path %> /
+      <% end %>
       <a href="#">Back to top</a>
     </p>
     <%= copyright %>

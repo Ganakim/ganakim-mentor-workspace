@@ -1,6 +1,7 @@
 <div class="inner cover">
   <h1 class="cover-heading">News from twitter!</h1>
-  <p class="row">
+  
+  <div class="row">
     <% @tweets.each do |x| %>
       <div class='col-md-6'>
         <div class='news'>
@@ -10,6 +11,5 @@
         </div>
       </div>
     <% end %>
-  </p>
-  <%= link_to 'About Me', about_path, class: 'btn btn-lg btn-secondary' %>
+  </div>
 </div>

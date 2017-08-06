@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "gritter";
 
 /*
@@ -30,12 +31,10 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: rgba(20,20,20,.95);
 }
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -48,12 +47,18 @@ body {
           box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
 }
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.cover-container > div {
+  flex: 1;
 }
 
 /* Padding for spacing */
@@ -135,16 +140,16 @@ body {
 @media (min-width: 40em) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    position: relative;
     top: 0;
   }
   .mastfoot {
-    position: fixed;
+    position: relative;
     bottom: 0;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
-    vertical-align: middle;
+    height: 100%;
   }
   /* Handle the widths */
   .masthead,
@@ -177,6 +182,7 @@ body {
 
 .mastfoot {
   pointer-events: none;
+  max-height: 120px;
 }
 
 .register-text {
@@ -187,6 +193,11 @@ body {
   width: 22rem;
   margin: 0 auto;
   float: none;
+}
+
+.app-nav {
+  display: flex;
+  flex-wrap: wrap
 }
 
 .app-nav span {
@@ -220,4 +231,50 @@ body {
 
 .news > .card{
   padding: 30px;
+}
+
+.prof-img {
+  max-width: 300px;
+}
+
+.app-card-container {
+  color: black;
+  text-align: left;
+}
+
+.app-card-container > .card {
+ padding: 40px; 
+}
+
+.app-card-container a {
+  color: #0275d8; 
+}
+
+.out-find {
+  font-size: 3em;
+  margin: 0;
+}
+
+.out-find a {
+  padding-right: 50px;
+}
+
+.skill {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.gritter-close {
+  width: 100%;
+  height: 100%;
+}
+
+.hazy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(20,20,20,.95);
+  z-index: -1;
 }

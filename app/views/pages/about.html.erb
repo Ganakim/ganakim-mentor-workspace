@@ -1,14 +1,83 @@
-<h1>About Me</h1>
+<div class='app-card-container'>
+  <div class='card'>
+    <h1>About Me:</h1>
+    
+    <hr>
+    
+    <div class='row'>
+      <div class='col-md-4'>
+        <%= image_tag 'Midna.jpg', width: '100%', alt: 'Profile image', class: 'prof-img' %>
+        
+        <div class='skills'>
+          <% @skills.each do |x| %>
+            <div class='skill'>
+              <h4><%= x.title %></h4>
+              <div class='progress'>
+                <div 
+                  class='progress-bar progress-bar-striped bg-warning'
+                  role='progress-bar'
+                  aria-valuenow='<%= x.time_spent %>'
+                  aria-valuemax='<%= @skillsTotal %>'
+                  style='width: <%= (x.time_spent.to_f / @skillsTotal) * 100 %>%'
+                >
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class='col-md-8'>
+        <p>
+          With almost a decade of experience in full stack, and video game development, I have a fairly good understanding of most things code. And have realized: most things, use code.
+        </p>
+        
+        <p>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#jobHistory"
+            aria-expanded="false"
+            aria-controler="jobHistory"
+          >
+            Job History
+          </button>
 
-<hr>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded="false"
+            aria-controler="education"
+          >
+            Education
+          </button>
+        </p>
 
-<div class='row'>
-  <div class='col-md-4'>
-    <%= image_tag 'Midna.jpg', width: 300, alt: 'Profile image' %>
-  </div>
-  <div class='col-md-8'>
-    <p>
-      With almost a decade of experience in full stack, and video game development, I have a fairly good understanding of most things code. And most things, use code.
-    </p>
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+              Job 1
+            </div>
+            <div class="card card-block">
+              Job 2
+            </div>
+          </div>
+
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              School 1
+            </div>
+            <div class="card card-block">
+              School 2
+            </div>
+            <div class="card card-block">
+              School 3
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>

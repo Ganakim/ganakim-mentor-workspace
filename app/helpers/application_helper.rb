@@ -1,16 +1,16 @@
 module ApplicationHelper
-  def login_helper style = ''
+  def login_helper(style = '', tag)
     if current_user.is_a?(GuestUser)
-      (link_to 'Login', new_user_session_path, class: style) + ' ' +
-      (link_to 'Register', new_user_registration_path, class: style)
+      "<#{tag}>#{link_to 'Login', new_user_session_path, class: style}</#{tag}>
+      <#{tag}>#{link_to 'Register', new_user_registration_path, class: style}</#{tag}>".html_safe
     else
-      link_to 'Logout', destroy_user_session_path, method: :delete, class: style
+      "<#{tag}>#{link_to 'Logout', destroy_user_session_path, method: :delete, class: style}</#{tag}>".html_safe
     end
   end
   
-  def source_helper(layout)
+  def source_helper(styles)
     if session[:source]
-      content_tag(:p, "Thanks for visiting from #{session[:source]}", class: 'source-greeting')
+      content_tag(:div, ("Thanks for visiting from #{session[:source]}, please feel free to #{link_to 'contact me', contact_path } if you'd like to work together.").html_safe, class: styles)
     end
   end
   
@@ -42,7 +42,7 @@ module ApplicationHelper
       },
       {
         url: news_path,
-        title: 'news'
+        title: 'News'
       }
     ]
   end
@@ -63,13 +63,12 @@ module ApplicationHelper
   
   def alert
     alert = (flash[:alert] || flash[:error] || flash[:notice])
-    # Make the hit-box the right size
     if alert
       alertGen alert
     end
   end
   
   def alertGen msg
-    js add_gritter(msg, title: 'Hey!', sticky: true, time: 2000)
+    js add_gritter(msg, title: 'Hey!', sticky: false, time: 2000)
   end
 end

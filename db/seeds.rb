@@ -39,13 +39,21 @@ Blog.create!(
   body: "My personally favorite coding language.",
   topic_id: 1
   )
-
-3.times do|x|
-  Skill.create!(
-    title: "I am proficient at: #{x}",
-    time_spent: 12
-    )
-end
+  
+Skill.create!(
+  title: "I am proficient at: JavaScript",
+  time_spent: 2
+  )
+  
+Skill.create!(
+  title: "I am proficient at: HTML",
+  time_spent: 1
+  )
+  
+Skill.create!(
+  title: "I am proficient at: Rails",
+  time_spent: 0
+  )
 
 3.times do|x|
   Portfolio.create!(
@@ -71,6 +79,6 @@ Portfolio.create!(
     )
 end
   
-  User.create!(name: 'Default_Admin', password: 'aaaaaa', email: 'a@a')
+User.create!(name: 'Default_Admin', password: 'aaaaaa', password_confirmation: 'aaaaaa', email: 'a@a', roles: 'site_admin')
 
 puts "Complete."
