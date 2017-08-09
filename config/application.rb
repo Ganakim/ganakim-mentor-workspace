@@ -18,14 +18,14 @@ Bundler.require(*Rails.groups)
 
 module DevcampPortfolio
   class Application < Rails::Application
-   config.eager_load_paths << "#{Rails.root}/lib"
-    config.generators do |g|
-      g.orm             :active_record
-      g.template_engine :erb
-      g.test_framework  :test_unit, fixture: false
-      g.stylesheets     false
-      g.javascripts     false
-    end
+    config.eager_load_paths << "#{Rails.root}/lib"
+      config.generators do |g|
+        g.orm             :active_record
+        g.template_engine :erb
+        g.test_framework  :test_unit, fixture: false
+        g.stylesheets     false
+        g.javascripts     false
+      end
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
   end
-  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 end
