@@ -27,4 +27,5 @@ module DevcampPortfolio
       g.javascripts     false
     end
   end
+  gonfig.secret_key_base = ENV["SECRET_KEY_BASE"]
 end
