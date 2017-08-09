@@ -1,14 +1,15 @@
 <div class='app-card-container'>
   <div class='card'>
-    <h1>Contact me:</h1>
-    <p>Phone number: <%= number_to_phone('8019602016') %></p>
-    <p><a href='mailto:espene.cornwall@gmail.com?subject=PortfolioContact' 'email me'>Email me</a></p>
-    <hr>
+    <div class='bg-faded contact-head'>
+      <h1>Full human interaction.</h1>
+      <p class="text-muted">All inquiries and questions go directly to me, which means no phone menues, or black holes of inboxes, just a guy, at his computer.</p>
+    </div>
+    <p>Via Phone: <%= number_to_phone('8019602016') %></p>
+    <p>Via: <%= link_to 'My blog', blogs_path %></p>
+    <p>Via: <a href='mailto:espene.cornwall@gmail.com?subject=PortfolioContact'>Email</a></p>
     <h4>Or, find me on social media:</h4>
     <div class='row out-find'>
-      <a href="https://github.com/Ganakim"><%= fa_icon "github" %></a>
-      <a href="https://www.facebook.com/spencer.cornwall"><%= fa_icon "facebook" %></a>
-      <a href="https://www.linkedin.com/in/spencer-cornwall-306647123"><%= fa_icon "linkedin-square" %></a>
+      <%= social_links_helper('div') %>
     </div>
   </div>
 </div>
