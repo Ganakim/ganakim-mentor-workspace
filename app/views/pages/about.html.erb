@@ -14,7 +14,7 @@
               <h4><%= x.title %></h4>
               <div class='progress'>
                 <div 
-                  class='progress-bar progress-bar-striped bg-primary'
+                  class='progress-bar progress-bar-striped'
                   role='progress-bar'
                   aria-valuenow='<%= x.time_spent %>'
                   aria-valuemax='<%= @skillsTotal %>'
@@ -22,6 +22,7 @@
                 >
                 </div>
               </div>
+              <p><%= distance_of_time_in_words(x.time_spent * 60, 0) %></p>
             </div>
           <% end %>
         </div>
