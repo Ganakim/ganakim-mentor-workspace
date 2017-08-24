@@ -75,9 +75,9 @@ module ApplicationHelper
   def social_links_helper(tag)
     "<#{tag}><a href='https://github.com/Ganakim'>#{"<i class='fa fa-github'>".html_safe}</i></a></#{tag}>
     <#{tag}><a href='https://www.facebook.com/spencer.cornwall'>#{"<i class='fa fa-facebook'>".html_safe}</i></a></#{tag}>
-    <#{tag}><a href='https://www.instagram.com'>#{"<i class='fa fa-instagram'>".html_safe}</i></a></#{tag}>
-    <#{tag}><a href='https://www.twitter.com'>#{"<i class='fa fa-twitter'>".html_safe}</i></a></#{tag}>
-    <#{tag}><a href='https://www.tumblr.com'>#{"<i class='fa fa-tumblr-square'>".html_safe}</i></a></#{tag}>
+    <#{tag}><a style='color:red' href='https://www.instagram.com'>#{"<i class='fa fa-instagram'>".html_safe}</i></a></#{tag}>
+    <#{tag}><a style='color:red' href='https://www.twitter.com'>#{"<i class='fa fa-twitter'>".html_safe}</i></a></#{tag}>
+    <#{tag}><a style='color:red' href='https://www.tumblr.com'>#{"<i class='fa fa-tumblr-square'>".html_safe}</i></a></#{tag}>
     <#{tag}><a href='https://www.linkedin.com/in/spencer-cornwall-306647123'>#{"<i class='fa fa-linkedin-square'>".html_safe}</i></a></#{tag}>".html_safe
   end
 end

@@ -9,6 +9,8 @@
         <%= image_tag 'Midna.jpg', width: '100%', alt: 'Profile image', class: 'prof-img' %>
         
         <div class='skills'>
+          <h3>Profesional time spent:</h3>
+          <hr>
           <% @skills.each do |x| %>
             <div class='skill'>
               <h4><%= x.title %></h4>
